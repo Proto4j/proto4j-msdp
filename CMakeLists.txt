@@ -1,0 +1,8 @@
+cmake_minimum_required(VERSION 2.8)
+project(msdp-native)
+set(CMAKE_BUILD_TYPE Release)
+find_package(JNI REQUIRED)
+include_directories(${JNI_INCLUDE_DIRS})
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -std=c++11")
+set(SOURCE_FILES src/main/jni/org_proto4j_msdp_TestClass.cpp)
+add_library(msdpjni SHARED ${SOURCE_FILES})
